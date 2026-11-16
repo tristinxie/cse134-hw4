@@ -11,9 +11,53 @@
 	--page-width: 95%;
 	--page-padding: 2rem;
 	--post-card-width: 25rem;
+	--background-color: #ffffff;
+	--input-background-color: #ffffff;
+	--link-color: #0969da;
+	--card-border-color: transparent;
+}
+
+:root[data-theme="dark"] {
+    --background-color: #0d1117;
+    --text-color: #e6edf3;
+    --form-color: #8b949e;
+    --menu-color: #f0f6fc;
+    --main-color: #161b22;
+    --accent-color: #f7d046;
+    --error-color: #ff7b72;
+    --error-area-color: #3d2428;
+    --info-area-color: #192f45;
+    --input-background-color: #161b22;
+    --link-color: #58a6ff;
+	--card-border-color: #656d76;
+}
+
+#theme-toggle .sun-icon {
+    display: none;
+}
+
+:root[data-theme="dark"] #theme-toggle .moon-icon {
+    display: none;
+}
+
+:root[data-theme="dark"] #theme-toggle .sun-icon {
+    display: inline;
+}
+
+#theme-toggle {
+    view-transition-name: theme-icon;
+}
+
+::view-transition-group(theme-icon) {
+    animation-duration: 0.5s;
+}
+
+a {
+    color: var(--link-color);
 }
 
 body {
+	background-color: var(--background-color);
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -102,6 +146,15 @@ nav button {
 }
 article socials-container a {
 	background-color: transparent;
+	color: var(--link-color);
+}
+
+socials-container svg {
+    fill: currentColor;
+}
+
+socials-container a:hover:not(.main-logo) {
+    background-color: var(--accent-color);
 }
 
 socials-container p {
@@ -173,6 +226,7 @@ a:focus, input:focus, select:focus, textarea:focus, button:focus {
 	border-radius: 1rem;
 	width: var(--post-card-width);
 	padding: 2rem;
+	border: 1px solid var(--card-border-color);
 }
 .post h2 {
 	overflow-wrap: break-word;
@@ -221,6 +275,8 @@ form-field label {
 }
 
 form-field input, form-field select, form-field textarea {
+	background-color: var(--input-background-color);
+	color: var(--text-color);
 	padding: 0.5em 0.8em;
 	border: 1px solid var(--form-color);
 	border-radius: 0.5rem;
