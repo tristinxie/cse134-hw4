@@ -65,6 +65,7 @@
         <form id="contact-form" action="https://httpbin.org/post" method="post">
           <form-field>
             <label for="name">Name <span class="required-q">*</span></label>
+            <small>1-100 characters</small>
             <input type="text" id="name" name="name" autofocus required minlength="1" maxlength="100"
               autocomplete="name" aria-describedby="name-error">
             <field-error>Please enter your name (1-100 characters)</field-error>
@@ -73,6 +74,7 @@
 
           <form-field>
             <label for="email">Email <span class="required-q">*</span></label>
+            <small>2-500 characters</small>
             <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="email-error">
             <field-error>Please enter a valid email address of form <code>user@email.address</code></field-error>
             <br>
@@ -111,6 +113,7 @@
 
           <form-field>
             <label for="comments">Comments <span class="required-q">*</span></label>
+            <small>10-1000 characters</small>
             <textarea id="comments" name="comments" required minlength="10" maxlength="1000"
               aria-describedby="comments-error comments-count"></textarea>
             <field-error>Please enter your message (10-1000 characters)</field-error>
