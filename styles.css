@@ -1,0 +1,236 @@
+:root {
+	--text-color: #3f3f3f;
+	--menu-color: white;
+	--main-color: #1c2b47;
+	--accent-color: #f7d046;
+	--font-stack: Arial, Helvetica, sans-serif;
+	--page-width: 95%;
+	--page-padding: 2rem;
+	--post-card-width: 25rem;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	font-family: var(--font-stack);
+	color: var(--text-color);
+}
+main {
+	max-width: var(--page-width);
+	padding: var(--page-padding);
+}
+
+#my-name {
+	font-size: 3rem;
+}
+
+header {
+	position: sticky;
+	top: 0;
+	background-color: var(--main-color);
+	padding: 1rem;
+}
+
+footer {
+	margin-top: auto;
+	background-color: var(--main-color);
+	color: var(--menu-color);
+	padding: 1.25rem;
+	display: flex;
+	justify-content: center;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+}
+
+header input {
+	display: none;
+}
+/* 
+This selects h1 with the custom data-greeting attribute. I want only the home page's greeting to 
+have the h1 be smaller.
+*/
+h1[data-greeting] {
+	font-size: 1.5rem;
+}
+
+/* 
+This pushes the button next the menu elements to the other side of the nav bar 
+*/
+ul + button {
+	margin-left: auto;
+}
+/* 
+This selects the top level menu elements of the nav bar and styles them. We do not style the nested
+children elements
+*/
+nav > ul{
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	gap: 2rem;
+}
+
+nav a {
+	color: var(--menu-color);
+	text-decoration: none;
+	padding: 1em;
+}
+
+nav button {
+	background-color: var(--main-color);
+	border: none;
+	color: var(--menu-color)
+}
+
+.me-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 3rem;
+}
+article socials-container a {
+	background-color: transparent;
+}
+
+socials-container p {
+	white-space: nowrap;
+	font-size: large;
+}
+socials-container ul{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem;
+	padding: 0;
+}
+
+#me-info {
+	width: 100%;
+}
+
+#me-links {
+	display: flex;
+	justify-content: space-around;
+}
+
+#me-location {
+	display: flex;
+	align-items: center;
+}
+
+article a, article button {
+	display: inline-block;
+	padding: 0.7em 1em;
+	border-radius: 0.5em;
+	background-color: var(--accent-color);
+	color: var(--main-color);
+	text-decoration: none;
+	border: none;
+}
+
+picture img {
+	border-radius: 20%;
+	width: auto;
+	margin-left: auto;
+}
+
+nav a:hover:not(.main-logo), nav button:hover {
+	background-color: var(--accent-color);
+	color: var(--main-color);
+	border-radius: 1rem;
+}
+
+a:hover:not(.main-logo), button:hover {
+	background-color: #EFEFEF;
+}
+
+a:focus, input:focus, button:focus {
+	outline: 3px var(--accent-color) solid;
+	border-radius: 0.5rem;
+}
+#post-section {
+	display: flex;
+	justify-content: space-around;
+}
+.post {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	color: var(--menu-color);
+	background-color: var(--main-color);
+	border-radius: 1rem;
+	width: var(--post-card-width);
+	padding: 2rem;
+}
+.post h2 {
+	overflow-wrap: break-word;
+}
+#form-section {
+	display: flex;
+	justify-content: center;
+}
+#contact-form {
+	display: flex;
+	flex-direction: column;
+}
+
+form-field {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+form-field label {
+	font-weight: bold;
+}
+
+form-field input, form-field select, form-field textarea {
+	padding: 0.5em 0.8em;
+	border: 1px solid #999;
+	border-radius: 0.5rem;
+}
+
+form-field textarea {
+	min-height: 5rem;
+	resize: vertical;
+}
+
+@media (max-width: 60rem) {
+	article {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+	nav {
+		flex-direction: column;
+	}
+	nav ul {
+		flex-direction: column;
+	}
+	#me-info {
+		max-width: 90%;
+	}
+	#me-links {
+		flex-direction: column;
+		align-items: center;
+		gap: 25px;
+	}
+	#post-section {
+		flex-direction: column;
+		align-items: center;
+	}
+	.post {
+		width: 10rem;
+	}
+	.post img {
+		width: 100%;
+	}
+}
