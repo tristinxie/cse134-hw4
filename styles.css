@@ -5,6 +5,8 @@
 	--main-color: #1c2b47;
 	--accent-color: #f7d046;
 	--error-color: rgb(220, 55, 45);
+	--error-area-color: #F3CFCE;
+	--info-area-color: #A7C7E7;
 	--font-stack: Arial, Helvetica, sans-serif;
 	--page-width: 95%;
 	--page-padding: 2rem;
@@ -175,10 +177,33 @@ a:focus, input:focus, select:focus, textarea:focus, button:focus {
 .post h2 {
 	overflow-wrap: break-word;
 }
+
 #form-section {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 }
+
+#error-area {
+	background-color: var(--error-area-color);
+	color: var(--error-color);
+	margin-bottom: 1rem;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+}
+
+#info-area {
+	background-color: var(--info-area-color);
+	margin-bottom: 1rem;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+}
+
+#comments-count.near-limit {
+	background-color: var(--accent-color);
+	font-weight: bold;
+}
+
 #contact-form {
 	display: flex;
 	flex-direction: column;

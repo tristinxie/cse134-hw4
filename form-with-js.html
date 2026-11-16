@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Tristin</title>
+  <!-- <style>
+    header,
+    footer,
+    section {
+      border: 2px solid #3F3F3F;
+    }
+  </style> -->
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="form.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <input type="checkbox" id="nav-toggle">
+    <nav class="menu">
+      <ul>
+        <li><a class="main-logo" href="/"><img src=/assets/favicon.ico alt="Tristin Xie Logo"></a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/assets/TristinXieResume.pdf">Resume</a></li>
+        <li><a href="/profile.html">About</a></li>
+        <li><a href="/form-no-js.html">Contact (No JS)</a></li>
+        <li><a href="/form-with-js.html">Contact (JS)</a></li>
+      </ul>
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+          <path
+            d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z" />
+        </svg>
+      </button>
+    </nav>
+  </header>
+  <br>
+  <main>
+    <article>
+      <h1>Contact Me</h1>
+      <p>Use the form below if you want to contact me. Please give me <strong>2 days</strong> to respond. If I don't respond within 2 days <em>please don't hestitate</em> to contact me again!</p>
+      <section id="form-section">
+        <form id="contact-form" action="https://httpbin.org/post" method="post">
+          <form-field>
+            <label for="name">Name <span class="required-q" aria-label="Required question">*</span></label>
+            <input type="text" id="name" name="name" autofocus required minlength="1" maxlength="100" autocomplete="name" aria-describedby="name-error">
+            <field-error>Please enter your name (1-100 characters)</field-error>
+            <br>
+          </form-field>
+
+          <form-field>
+            <label for="email">Email <span class="required-q" aria-label="Required question">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="email-error">
+            <field-error>Please enter a valid email address of form <code>user@email.address</code></field-error>
+            <br>
+          </form-field>
+
+          <form-field>
+            <label for="subject">Subject <span class="required-q" aria-label="Required question">*</span></label>
+            <input type="text" id="subject" name="subject" required minlength="2" maxlength="500" aria-describedby="subject-error">
+            <field-error>Please enter a subject (2-500 characters)</field-error>
+            <br>
+          </form-field>
+
+          <form-field>
+            <label for="category">Category <span class="required-q" aria-label="Required question">*</span></label>
+            <select id="category" name="category" required aria-describedby="category-error">
+              <option value="" disabled>Select a category...</option>
+              <hr>
+              <option value="general">General Inquiry</option>
+              <option value="recruitment">Recruitment</option>
+              <option value="feedback">Feedback</option>
+              <option value="bug">Bug Report</option>
+              <option value="other">Other</option>
+            </select>
+            <br>
+          </form-field>
+
+          <form-field>
+          <!-- <label for="possible_bot">Possible bot</label> -->
+          <input type="hidden" name="possible_bot" value="true">
+          </form-field>
+
+          <form-field>
+            <input type="hidden" id="form-errors" name="form-errors">
+          </form-field>
+
+          <form-field>
+            <label for="comments">Comments <span class="required-q" aria-label="Required question">*</span></label>
+            <textarea id="comments" name="comments" required minlength="10" maxlength="1000" aria-describedby="comments-error comments-count"></textarea>
+            <field-error>Please enter your message (10-1000 characters)</field-error>
+            <br>
+          </form-field>
+
+          <section id="error-area" aria-live="polite" hidden>
+            <h2>Error Messages</h2>
+            <p id="name-error"></p>
+            <p id="email-error"></p>
+            <p id="subject-error"></p>
+            <p id="category-error"></p>
+            <p id="comments-error"></p>
+          </section>
+
+          <section id="info-area" hidden>
+            <h2>Comments Information</h2>
+            <p id="comments-count"></p>
+          </section>
+
+          <!-- <button
+              type="button"
+              commandfor="confirm-dialog"
+              command="show-modal">
+              Send Message
+          </button> -->
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </article>
+  </main>
+  <br>
+  <footer>
+    Made with &hearts; in Vanilla HTML, CSS, and JS
+  </footer>
+  <!-- Confirm form submit dialog -->
+  <!-- <dialog id="confirm-dialog">
+    <h2>Confirm Submission</h2>
+
+    <p>Are you ready to submit?</p>
+
+    <button type="submit" form="contact-form">
+        Submit
+    </button>
+    <button
+        type="button"
+        commandfor="confirm-dialog"
+        command="close">
+        Cancel
+    </button>
+  </dialog> -->
+</body>
+
+</html>
