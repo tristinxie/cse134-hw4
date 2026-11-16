@@ -43,28 +43,28 @@
       <section id="form-section">
         <form id="contact-form" action="https://httpbin.org/post" method="post">
           <form-field>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" autofocus required minlength="2" autocomplete="name">
-            <field-error>Please enter your name (at least 2 characters)</field-error>
+            <label for="name">Name <span class="required-q" aria-label="Required question">*</span></label>
+            <input type="text" id="name" name="name" autofocus required minlength="1" maxlength="100" autocomplete="name">
+            <field-error>Please enter your name (1-100 characters)</field-error>
             <br>
           </form-field>
 
           <form-field>
-            <label for="email">Email</label>
+            <label for="email">Email <span class="required-q" aria-label="Required question">*</span></label>
             <input type="email" id="email" name="email" required autocomplete="email">
             <field-error>Please enter a valid email address of form <code>user@email.address</code></field-error>
             <br>
           </form-field>
 
           <form-field>
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" required minlength="2">
-            <field-error>Please enter a subject (at least 2 characters)</field-error>
+            <label for="subject">Subject <span class="required-q" aria-label="Required question">*</span></label>
+            <input type="text" id="subject" name="subject" required minlength="2" maxlength="500">
+            <field-error>Please enter a subject (2-500 characters)</field-error>
             <br>
           </form-field>
 
           <form-field>
-            <label for="category">Category</label>
+            <label for="category">Category <span class="required-q" aria-label="Required question">*</span></label>
             <select id="category" name="category" required>
               <option value="" disabled>Select a category...</option>
               <hr>
@@ -83,9 +83,9 @@
 		  </form-field>
 
           <form-field>
-            <label for="comments">Comments</label>
-            <textarea id="comments" name="comments" required minlength="10"></textarea>
-            <field-error>Please enter your message (at least 10 characters)</field-error>
+            <label for="comments">Comments <span class="required-q" aria-label="Required question">*</span></label>
+            <textarea id="comments" name="comments" required minlength="10" maxlength="1000"></textarea>
+            <field-error>Please enter your message (10-1000 characters)</field-error>
             <br>
           </form-field>
 
@@ -113,7 +113,7 @@
         Submit
     </button>
     <button
-        type="submit"
+        type="button"
         commandfor="confirm-dialog"
         command="close">
         Cancel

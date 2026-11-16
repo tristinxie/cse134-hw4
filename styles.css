@@ -1,8 +1,10 @@
 :root {
 	--text-color: #3f3f3f;
+	--form-color: #999;
 	--menu-color: white;
 	--main-color: #1c2b47;
 	--accent-color: #f7d046;
+	--error-color: rgb(220, 55, 45);
 	--font-stack: Arial, Helvetica, sans-serif;
 	--page-width: 95%;
 	--page-padding: 2rem;
@@ -151,7 +153,7 @@ a:hover:not(.main-logo), button:hover {
 	background-color: #EFEFEF;
 }
 
-a:focus, input:focus, button:focus {
+a:focus, input:focus, select:focus, textarea:focus, button:focus {
 	outline: 3px var(--accent-color) solid;
 	border-radius: 0.5rem;
 }
@@ -195,13 +197,37 @@ form-field label {
 
 form-field input, form-field select, form-field textarea {
 	padding: 0.5em 0.8em;
-	border: 1px solid #999;
+	border: 1px solid var(--form-color);
 	border-radius: 0.5rem;
 }
 
 form-field textarea {
 	min-height: 5rem;
 	resize: vertical;
+}
+
+form-field .required-q {
+	color: var(--error-color);
+}
+
+form-field input:required:user-valid {
+	border: 1px solid var(--form-color);
+}
+
+form-field field-error {
+	visibility: hidden;
+}
+
+form-field input:required:user-invalid, form-field textarea:required:user-invalid {
+	border: 1px solid var(--error-color);
+}
+
+form-field input:required:user-invalid + field-error, form-field textarea:required:user-invalid + field-error {
+	visibility: visible;
+}
+
+form-field field-error {
+	color: var(--error-color);
 }
 
 @media (max-width: 60rem) {
